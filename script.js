@@ -89,7 +89,7 @@ ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { ori
 
 function sendEmail() {
     Email.send({
-        SecureToken: "6874583004e1-4c45-873e-7a47ab97ead1",
+        SecureToken: "Security Token here",
         To: 'mkanaskhan9921@gmail.com',
         From: document.getElementById("email").value,
         Subject: "New Contact Form Enquiry",
