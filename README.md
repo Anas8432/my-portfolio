@@ -31,7 +31,7 @@ I'm Anas Khan, an aspiring Frontend Developer. This portfolio presents my work, 
 
 ## Skills Showcased
 
-HTML, CSS, JavaScript, React, Bootstrap, Tailwind CSS, Git and GitHub
+HTML, CSS, JavaScript, Git and GitHub
 
 ## Featured Projects
 
