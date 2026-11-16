@@ -299,20 +299,19 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <form onsubmit="sendEmail(); reset(); return false;">
+        <form onsubmit="return sendEmail(event);">
             <div class="input-box">
                 <input type="text" id="name" placeholder="Full Name" required>
                 <input type="email" id="email" placeholder="Email Address" required>
             </div>
             <div class="input-box">
-                <input type="" id="phone" placeholder="Mobile Number" required>
+                <input type="tel" id="phone" placeholder="Mobile Number" required>
                 <input type="text" id="subject" placeholder="Email Subject" required>
             </div>
             <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <!-- footer design -->
     <footer class="footer">
