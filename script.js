@@ -76,20 +76,29 @@ ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { ori
 
 
 
-// send email 
+// Send the contact message through the visitor's own email app.
+// No third-party SMTP token or external email service is used.
+function sendEmail(event) {
+    event.preventDefault();
 
-function sendEmail() {
-    Email.send({
-        SecureToken: "Security Token here",
-        To: 'mkanaskhan9921@gmail.com',
-        From: document.getElementById("email").value,
-        Subject: "New Contact Form Enquiry",
-        Body: "Name: " + document.getElementById('name').value
-            + "<br> Email: " + document.getElementById("email").value
-            + "<br> Phone no: " + document.getElementById("phone").value
-            + "<br> Email Subject: " + document.getElementById("subject").value
-            + "<br>  Message: " + document.getElementById("message").value
-    }).then(
-        message => alert("Message Sent Succesfully")
-    );
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const body = [
+        'Name: ' + name,
+        'Email: ' + email,
+        'Phone: ' + phone,
+        '',
+        message
+    ].join('\n');
+
+    const mailto = 'mailto:mkanaskhan9921@gmail.com'
+        + '?subject=' + encodeURIComponent(subject || 'Portfolio Contact')
+        + '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailto;
+    return false;
 }
